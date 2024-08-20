@@ -83,8 +83,8 @@ class _ListScrollAnimationState extends State<ListScrollAnimation> {
                               DiscoverItems(
                                 size,
                                 Colors.green,
-                                "Super savings",
-                                "20 items",
+                                "Super Savings",
+                                "10 items",
                               ),
                             ],
                           ),
@@ -111,6 +111,7 @@ class _ListScrollAnimationState extends State<ListScrollAnimation> {
     );
   }
 
+  //Items Discover Container
   Container DiscoverItems(Size size, Color color, name, items) {
     return Container(
       height: size.height * 0.23,
