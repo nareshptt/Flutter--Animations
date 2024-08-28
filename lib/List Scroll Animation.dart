@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
 
+import 'Model/scrol_list_model.dart';
+
 class ListScrollAnimation extends StatefulWidget {
   const ListScrollAnimation({super.key});
 
@@ -8,8 +10,24 @@ class ListScrollAnimation extends StatefulWidget {
 }
 
 class _ListScrollAnimationState extends State<ListScrollAnimation> {
+  ScrollController scrollController = ScrollController();
   bool closeContainer = false;
+  List<Widget> myItems = [];
+  double myTopContainer = 0;
+
   @override
+  void initState() {
+    super.initState();
+    myBodyItem();
+    scrollController.addListener(() {
+      double data = scrollController.offset / 120;
+      setState(() {
+        myTopContainer = data;
+        closeContainer = scrollController.offset > 50;
+      });
+    });
+  }
+
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
@@ -103,12 +121,77 @@ class _ListScrollAnimationState extends State<ListScrollAnimation> {
                       fontSize: 18,
                       color: Colors.black45),
                 ),
-              )
+              ),
+              Expanded(
+                  child: ListView.builder(
+                controller: scrollController,
+                itemCount: myItems.length,
+                itemBuilder: (context, index) {
+                  double opacity = 1.0;
+                  if (myTopContainer > 0.5) {
+                    opacity = index + 0.5 - myTopContainer;
+                  }
+                  if (opacity < 0) {
+                    opacity = 0;
+                  } else if (opacity > 1) {
+                    opacity = 1;
+                  }
+                  return Opacity(
+                    opacity: opacity,
+                    child: Transform(
+                      transform: Matrix4.identity()..scale(opacity, opacity),
+                      alignment: Alignment.topCenter,
+                      child: Align(
+                        heightFactor: 0.7,
+                        child: myItems[index],
+                      ),
+                    ),
+                  );
+                },
+              ))
             ],
           ),
         ),
       ),
     );
+  }
+
+  void myBodyItem() {
+    List<Widget> listitems = [];
+    for (ScrollItems item in dataItems) {
+      listitems.add(
+        Container(
+          height: 160,
+          margin: EdgeInsets.symmetric(horizontal: 20, vertical: 15),
+          decoration: BoxDecoration(
+              color: Color(item.color),
+              boxShadow: const [
+                BoxShadow(
+                  color: Colors.black26,
+                  blurRadius: 5,
+                )
+              ],
+              borderRadius: BorderRadius.circular(20)),
+          padding: EdgeInsets.symmetric(horizontal: 20, vertical: 10),
+          child: Row(
+            mainAxisAlignment: MainAxisAlignment.spaceBetween,
+            children: [
+              Text(
+                item.name,
+                style: TextStyle(fontWeight: FontWeight.bold, fontSize: 22),
+              ),
+              Image.asset(
+                item.image,
+                fit: BoxFit.cover,
+              )
+            ],
+          ),
+        ),
+      );
+    }
+    setState(() {
+      myItems = listitems;
+    });
   }
 
   //Items Discover Container
