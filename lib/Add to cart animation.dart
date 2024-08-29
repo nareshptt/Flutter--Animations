@@ -29,7 +29,7 @@ class _AddToCartState extends State<AddToCart> {
             height: 70,
             width: isExpended ? 220 : 90,
             decoration: BoxDecoration(
-                color: isExpended ? Colors.green : Colors.black87,
+                color: isExpended ? Colors.green : Colors.black54,
                 borderRadius: BorderRadius.circular(isExpended ? 50 : 10)),
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
