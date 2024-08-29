@@ -1,6 +1,5 @@
 import 'package:flutter/material.dart';
-
-import 'List Scroll Animation.dart';
+import 'package:flutter_animations/Add%20to%20cart%20animation.dart';
 
 void main() {
   runApp(const MyApp());
@@ -13,15 +12,12 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      debugShowCheckedModeBanner: false,
-      title: 'Flutter Demo',
-      theme: ThemeData(
-
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
-        useMaterial3: true,
-      ),
-      home: ListScrollAnimation()
-    );
+        debugShowCheckedModeBanner: false,
+        title: 'Flutter Demo',
+        theme: ThemeData(
+          colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
+          useMaterial3: true,
+        ),
+        home: AddToCart());
   }
 }
-
