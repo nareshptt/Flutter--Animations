@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animations/List%20Scroll%20Animation.dart';
 
 class AddToCart extends StatefulWidget {
   const AddToCart({super.key});
@@ -13,14 +14,17 @@ class _AddToCartState extends State<AddToCart> {
   Widget build(BuildContext context) {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
-        onPressed: () {},
+        onPressed: () {
+          Navigator.pushReplacement(context,
+              MaterialPageRoute(builder: (context) => ListScrollAnimation()));
+        },
         backgroundColor: Colors.amber,
         child: Icon(Icons.arrow_forward_ios_outlined),
       ),
       appBar: AppBar(
         backgroundColor: Colors.amber,
         centerTitle: true,
-        title: const Text("Botton Animation"),
+        title: const Text("Button Animation"),
       ),
       body: Center(
         child: GestureDetector(
@@ -39,7 +43,7 @@ class _AddToCartState extends State<AddToCart> {
             child: Row(
               mainAxisAlignment: MainAxisAlignment.center,
               children: [
-                if (isExpended) SizedBox(width: 35),
+                if (isExpended) SizedBox(width: 30),
                 Icon(
                   isExpended ? Icons.check : Icons.shopping_cart,
                   size: 30,
