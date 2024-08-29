@@ -12,10 +12,15 @@ class _AddToCartState extends State<AddToCart> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {},
+        backgroundColor: Colors.amber,
+        child: Icon(Icons.arrow_forward_ios_outlined),
+      ),
       appBar: AppBar(
         backgroundColor: Colors.amber,
         centerTitle: true,
-        title: const Text("Shopping Cart Botton Animatio "),
+        title: const Text("Botton Animation"),
       ),
       body: Center(
         child: GestureDetector(
@@ -43,7 +48,7 @@ class _AddToCartState extends State<AddToCart> {
                 if (isExpended)
                   Expanded(
                     child: Text(
-                      "Add to Cart",
+                      "Added to Cart",
                       maxLines: 1,
                       style: TextStyle(
                           fontWeight: FontWeight.bold,

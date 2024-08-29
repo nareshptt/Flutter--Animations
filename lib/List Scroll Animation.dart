@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animations/Add%20to%20cart%20animation.dart';
 
 import 'Model/scrol_list_model.dart';
 
@@ -31,6 +32,19 @@ class _ListScrollAnimationState extends State<ListScrollAnimation> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      appBar: AppBar(
+        centerTitle: true,
+        backgroundColor: Colors.amber,
+        title: Text("List Scroll Animation"),
+      ),
+      floatingActionButton: FloatingActionButton(
+        onPressed: () {
+          Navigator.pushReplacement(
+              context, MaterialPageRoute(builder: (context) => AddToCart()));
+        },
+        backgroundColor: Colors.amber,
+        child: Icon(Icons.arrow_forward_ios),
+      ),
       backgroundColor: Colors.white,
       body: SafeArea(
         child: SizedBox(

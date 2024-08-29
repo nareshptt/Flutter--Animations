@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animations/Add%20to%20cart%20animation.dart';
+import 'package:flutter_animations/List%20Scroll%20Animation.dart';
 
 void main() {
   runApp(const MyApp());
@@ -18,6 +18,6 @@ class MyApp extends StatelessWidget {
           colorScheme: ColorScheme.fromSeed(seedColor: Colors.blue),
           useMaterial3: true,
         ),
-        home: AddToCart());
+        home: ListScrollAnimation());
   }
 }
