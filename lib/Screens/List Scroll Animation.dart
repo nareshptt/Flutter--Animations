@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animations/Add%20to%20cart%20animation.dart';
 
-import 'Model/scrol_list_model.dart';
+import '../Model/scrol_list_model.dart';
+import 'MovingObjectAnimation.dart';
 
 class ListScrollAnimation extends StatefulWidget {
   const ListScrollAnimation({super.key});
@@ -39,10 +39,9 @@ class _ListScrollAnimationState extends State<ListScrollAnimation> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.pushReplacement(
-              context, MaterialPageRoute(builder: (context) => AddToCart()));
+          Navigator.pushReplacement(context,
+              MaterialPageRoute(builder: (context) => MovingObjectAnimation()));
         },
-        backgroundColor: Colors.amber,
         child: Icon(Icons.arrow_forward_ios),
       ),
       backgroundColor: Colors.white,

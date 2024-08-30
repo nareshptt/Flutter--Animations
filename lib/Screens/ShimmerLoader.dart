@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:shimmer/shimmer.dart';
 
-import 'Model/animatedlist_model.dart';
+import '../Model/animatedlist_model.dart';
 
 class ShimmerLoader extends StatefulWidget {
   const ShimmerLoader({

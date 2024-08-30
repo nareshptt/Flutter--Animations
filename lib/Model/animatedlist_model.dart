@@ -12,10 +12,10 @@ class User {
 
 List<User> users = [
   User(
-    name: 'Jasmine Smith',
-    username: ' @JazzyS',
+    name: 'Naresh kumar',
+    username: ' @nareshptt',
     image:
-        "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7-aGpatw32H3vwj6ZVhJew0zFKD-R1UlzL-N1AUu2kQ&s",
+        "https://media.licdn.com/dms/image/v2/D4D03AQEF9wAUuFPi2Q/profile-displayphoto-shrink_200_200/profile-displayphoto-shrink_200_200/0/1722013476753?e=2147483647&v=beta&t=CcnkxUgU-JhjDH3jKbabl3FVCh-qlAGif_jOZTvsvfI",
   ),
   User(
     name: 'Lucas Johnson',

@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animations/List%20Scroll%20Animation.dart';
+import 'package:flutter_animations/Screens/List%20Scroll%20Animation.dart';
 
 void main() {
   runApp(const MyApp());

@@ -38,7 +38,6 @@ class _FABcircularAnimationState extends State<FABcircularAnimation>
           Navigator.pushReplacement(context,
               MaterialPageRoute(builder: (context) => ShimmerLoader()));
         },
-        backgroundColor: Colors.amber,
         child: Icon(Icons.arrow_forward_ios_outlined),
       ),
       body: Center(
