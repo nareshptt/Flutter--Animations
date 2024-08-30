@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animations/List%20Scroll%20Animation.dart';
+import 'package:flutter_animations/FABcircularAnimation.dart';
 
 class AddToCart extends StatefulWidget {
   const AddToCart({super.key});
@@ -13,18 +13,19 @@ class _AddToCartState extends State<AddToCart> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: Colors.white,
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.pushReplacement(context,
-              MaterialPageRoute(builder: (context) => ListScrollAnimation()));
+              MaterialPageRoute(builder: (context) => FABcircularAnimation()));
         },
         backgroundColor: Colors.amber,
         child: Icon(Icons.arrow_forward_ios_outlined),
       ),
       appBar: AppBar(
-        backgroundColor: Colors.amber,
-        centerTitle: true,
-        title: const Text("Button Animation"),
+        backgroundColor: Colors.white,
+        title: const Text("Button Animation",
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25)),
       ),
       body: Center(
         child: GestureDetector(

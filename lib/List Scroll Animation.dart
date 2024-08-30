@@ -33,9 +33,9 @@ class _ListScrollAnimationState extends State<ListScrollAnimation> {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
       appBar: AppBar(
-        centerTitle: true,
-        backgroundColor: Colors.amber,
-        title: Text("List Scroll Animation"),
+        backgroundColor: Colors.white,
+        title: Text("List Scroll Animation",
+            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25)),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
