@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animations/Screens/List%20Scroll%20Animation.dart';
 import 'package:shimmer/shimmer.dart';
 
 import '../Model/animatedlist_model.dart';
@@ -30,6 +31,8 @@ class _ShimmerLoaderState extends State<ShimmerLoader> {
     return Scaffold(
       floatingActionButton: FloatingActionButton(
         onPressed: () {
+          Navigator.pushReplacement(context,
+              MaterialPageRoute(builder: (context) => ListScrollAnimation()));
           setState(() {
             isLoaded = false;
           });

@@ -27,11 +27,15 @@ class _FABcircularAnimationState extends State<FABcircularAnimation>
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: Colors.white,
+      backgroundColor: Color.fromARGB(255, 34, 36, 49),
       appBar: AppBar(
-        backgroundColor: Colors.white,
-        title: Text("FABcircularAnimation ",
-            style: TextStyle(fontWeight: FontWeight.bold, fontSize: 25)),
+        centerTitle: true,
+        backgroundColor: Color.fromARGB(255, 34, 36, 49),
+        title: Text("RadialAnimatedMenu Animation ",
+            style: TextStyle(
+                fontWeight: FontWeight.bold,
+                fontSize: 25,
+                color: Colors.white)),
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {

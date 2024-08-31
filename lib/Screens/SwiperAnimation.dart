@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animations/Screens/FABcircularAnimation.dart';
+import 'package:flutter_animations/Screens/ListViewAnimation.dart';
 import 'package:flutter_swiper_view/flutter_swiper_view.dart';
 
 class SwiperAnimation extends StatefulWidget {
@@ -16,18 +16,18 @@ class _SwiperAnimationState extends State<SwiperAnimation> {
       floatingActionButton: FloatingActionButton(
         onPressed: () {
           Navigator.pushReplacement(context,
-              MaterialPageRoute(builder: (context) => FABcircularAnimation()));
+              MaterialPageRoute(builder: (context) => ListViewAnimation()));
         },
         child: Icon(Icons.arrow_forward_ios),
       ),
-      backgroundColor: Colors.brown[100],
+      backgroundColor: const Color.fromARGB(255, 34, 36, 49),
       body: Column(
         children: [
           Container(
             padding: EdgeInsets.only(top: 40),
             height: MediaQuery.of(context).size.height / 2.2,
             decoration: BoxDecoration(
-                color: Colors.white70,
+                color: Color.fromARGB(255, 34, 36, 49),
                 borderRadius: BorderRadius.only(
                   bottomLeft: Radius.circular(50),
                   bottomRight: Radius.circular(50),

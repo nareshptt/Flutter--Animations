@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:flutter_animations/Screens/MovingObjectAnimation.dart';
 
 import '../Model/scrol_list_model.dart';
-import 'MovingObjectAnimation.dart';
 
 class ListScrollAnimation extends StatefulWidget {
   const ListScrollAnimation({super.key});
@@ -32,6 +32,7 @@ class _ListScrollAnimationState extends State<ListScrollAnimation> {
   Widget build(BuildContext context) {
     Size size = MediaQuery.of(context).size;
     return Scaffold(
+      drawer: Drawer(),
       appBar: AppBar(
         backgroundColor: Colors.white,
         title: Text("List Scroll Animation",
@@ -39,8 +40,29 @@ class _ListScrollAnimationState extends State<ListScrollAnimation> {
       ),
       floatingActionButton: FloatingActionButton(
         onPressed: () {
-          Navigator.pushReplacement(context,
-              MaterialPageRoute(builder: (context) => MovingObjectAnimation()));
+          Navigator.pushReplacement(
+            context,
+            PageRouteBuilder(
+              pageBuilder: (context, animation, secondaryAnimation) =>
+                  MovingObjectAnimation(),
+              transitionsBuilder:
+                  (context, animation, secondaryAnimation, child) {
+                // Slide transition from right to left
+                const begin = Offset(1.0, 0.0);
+                const end = Offset.zero;
+                const curve = Curves.easeInOut;
+
+                var tween = Tween(begin: begin, end: end)
+                    .chain(CurveTween(curve: curve));
+                var offsetAnimation = animation.drive(tween);
+
+                return SlideTransition(
+                  position: offsetAnimation,
+                  child: child,
+                );
+              },
+            ),
+          );
         },
         child: Icon(Icons.arrow_forward_ios),
       ),
