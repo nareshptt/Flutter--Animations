@@ -27,12 +27,26 @@ class _ListViewAnimationState extends State<ListViewAnimation> {
   Widget build(BuildContext context) {
     width = MediaQuery.of(context).size.width;
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
-          Navigator.pushReplacement(context,
-              MaterialPageRoute(builder: (context) => FABcircularAnimation()));
+      floatingActionButton: GestureDetector(
+        onLongPress: () {
+          setState(() {
+            myAnimation = false;
+          });
+          Future.delayed(const Duration(seconds: 3), () {
+            setState(() {
+              myAnimation = true;
+            });
+          });
         },
-        child: Icon(Icons.arrow_forward_ios),
+        child: FloatingActionButton(
+          onPressed: () {
+            Navigator.pushReplacement(
+                context,
+                MaterialPageRoute(
+                    builder: (context) => FABcircularAnimation()));
+          },
+          child: Icon(Icons.arrow_forward_ios),
+        ),
       ),
       backgroundColor: const Color.fromARGB(255, 34, 36, 49),
       body: SafeArea(

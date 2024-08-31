@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
-import 'package:flutter_animations/Screens/List%20Scroll%20Animation.dart';
 import 'package:shimmer/shimmer.dart';
 
 import '../Model/animatedlist_model.dart';
+import 'List Scroll Animation.dart';
 
 class ShimmerLoader extends StatefulWidget {
   const ShimmerLoader({
@@ -29,20 +29,24 @@ class _ShimmerLoaderState extends State<ShimmerLoader> {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      floatingActionButton: FloatingActionButton(
-        onPressed: () {
+      floatingActionButton: GestureDetector(
+        onLongPress: () {
           Navigator.pushReplacement(context,
               MaterialPageRoute(builder: (context) => ListScrollAnimation()));
-          setState(() {
-            isLoaded = false;
-          });
-          Future.delayed(const Duration(seconds: 3), () {
-            setState(() {
-              isLoaded = true;
-            });
-          });
         },
-        child: Icon(Icons.refresh),
+        child: FloatingActionButton(
+          onPressed: () {
+            setState(() {
+              isLoaded = false;
+            });
+            Future.delayed(const Duration(seconds: 3), () {
+              setState(() {
+                isLoaded = true;
+              });
+            });
+          },
+          child: Icon(Icons.refresh),
+        ),
       ),
       body: ListView(
         shrinkWrap: true,

@@ -31,7 +31,7 @@ class _FABcircularAnimationState extends State<FABcircularAnimation>
       appBar: AppBar(
         centerTitle: true,
         backgroundColor: Color.fromARGB(255, 34, 36, 49),
-        title: Text("RadialAnimatedMenu Animation ",
+        title: Text("RadialAnimatedMenu",
             style: TextStyle(
                 fontWeight: FontWeight.bold,
                 fontSize: 25,
